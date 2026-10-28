@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # Train the model with enhanced parameters and augmentation
     results = model.train(
         data=dataset_yaml_path,
-        epochs=50,               # number of epochs
+        epochs=100,               # number of epochs
         imgsz=640,              # training image size
         batch=16,               # adjust according to your GPU memory
         optimizer="AdamW",      # try different optimizers
@@ -59,11 +59,11 @@ if __name__ == '__main__':
     # Save the current state of the model to a file.
     model.save(model_path)
 
-    # evaluation_results = model.val(
-    #     data=dataset_yaml_path,
-    #     imgsz=640,
-    #     project="runs",
-    #     name=model_name,
-    # )
-    #
-    # print(evaluation_results)
+    evaluation_results = model.val(
+        data=dataset_yaml_path,
+        imgsz=640,
+        project="runs",
+        name=model_name,
+    )
+    
+    print(evaluation_results)

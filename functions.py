@@ -9,7 +9,8 @@ from ultralytics import YOLO, YOLOWorld
 from constants import (yolo12_model_config, yolo12_model_path, yolo12_model_name,
                        yolo11_model_config, yolo11_model_name, yolo11_model_path,
                        yoloworld_model_config, yoloworld_model_name, yoloworld_model_path,
-                       results_root, results_fig_root, results_inf_root, results_inf_all_root,
+                       yolo26_model_config, yolo26_model_name, yolo26_model_path,
+                       results_root, results_fig_root, results_inf_root,
                        dataset_yaml_path, dataset_SEG_yaml_path, image_folder, label_folder,
                        map_names, dataset_test_yaml_path, results_root_test, dataset_test_SEG_yaml_path,
                        data_test_image_folder, data_test_label_folder, results_fig_root_test)
@@ -23,6 +24,8 @@ def load_model_train(model_name):
         return YOLO(yolo12_model_config), yolo12_model_name, yolo12_model_path
     elif model_name == "yolow":
         return YOLOWorld(yoloworld_model_config), yoloworld_model_name, yoloworld_model_path
+    elif model_name == "yolo26":
+        return YOLO(yolo26_model_config), yolo26_model_name, yolo26_model_path
     else:
         raise Exception("Model missing")
 
@@ -34,6 +37,8 @@ def load_model_test(model_name):
         return YOLO(yolo12_model_path)
     elif model_name == "yolow":
         return YOLOWorld(yoloworld_model_path)
+    elif model_name == "yolo26":
+        return YOLO(yolo26_model_path)
     else:
         raise Exception("Model missing")
 
@@ -55,6 +60,9 @@ class ModelLoader:
         elif self.model_name == "yolow":
             self.model = YOLOWorld(yoloworld_model_path)
             print(f"Model: {self.model_name} from {yoloworld_model_path}")
+        elif self.model_name == "yolo26":
+            self.model = YOLO(yolo26_model_path)
+            print(f"Model: {self.model_name} from {yolo26_model_path}")
         else:
             raise Exception("Model missing")
 

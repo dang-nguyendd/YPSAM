@@ -7,7 +7,7 @@ MODEL = "yolo12"
 ALL_MODELS = ["rtdetr", "yolo8", "yolo9", "yolo10", "yolo11", "yolo12", "yolo26", "yoloe", "yolow", ]
 
 # DATA OPTIONS: ["CVC-ClinicDB", "CVC-ColonDB", "ETIS-LaribPolypDB", "Kvasir", "Kvasir_CVC-ClinicDB"]
-DATA = "Kvasir"
+DATA = "Kvasir_CVC-ClinicDB"
 
 
 data_root = f"./data/{DATA}/"

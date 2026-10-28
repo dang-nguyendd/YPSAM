@@ -14,12 +14,6 @@ checkpoints/
 yolo_sam_v1/data/
 yolo_sam_v1/models/
 
-yolo_sam_v2/data/
-yolo_sam_v2/docker/
-yolo_sam_v2/examples/
-yolo_sam_v2/logs/
-yolo_sam_v2/tests/
-
 # Data
 data/*
 *inferences/
